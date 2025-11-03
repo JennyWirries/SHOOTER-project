@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Enemy2 : MonoBehaviour
 {
-    private float verticalSpeed = 2.5f;
-    private float horizontalSpeed = 3f;
-    private float moveDirection = 1f;
 
     void Update()
     {
-        // Move diagonally (zig-zag down)
-        transform.Translate(new Vector3(moveDirection * horizontalSpeed, -verticalSpeed, 0) * Time.deltaTime);
+        // Move diagonally (left-right)
+        transform.Translate(new Vector3(1,-1,0) * Time.deltaTime);
 
         // Reverse horizontal direction when reaching edges
         if (transform.position.x > 8.5f)
